@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ConsultationModule } from './consultation/consultation.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, ConsultationModule],
+  imports: [BrowserModule, ConsultationModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
