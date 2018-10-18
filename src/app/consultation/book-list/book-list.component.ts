@@ -9,10 +9,16 @@ import { Book } from 'src/app/shared/book';
 })
 export class BookListComponent implements OnInit {
   private books: Book[];
+  private selectedBook: Book;
 
   constructor(private bookService: BookService) {}
 
   ngOnInit() {
     this.books = this.bookService.getBooks();
+  }
+
+  onDelete(event: Book) {
+    this.books.splice(this.books.indexOf(event), 1);
+    this.selectedBook = event;
   }
 }
