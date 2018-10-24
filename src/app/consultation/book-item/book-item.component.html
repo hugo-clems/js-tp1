@@ -1,5 +1,5 @@
 <p>
-  <span appUppercase>{{model.title}}</span>
+  <a appUppercase [routerLink]="['book', model.id]">{{model.title}}</a>
   {{model.description}}
 </p>
 <button (click)="onDelete()">Supp.</button>
