@@ -7,7 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'consultation', pathMatch: 'full' }
+  { path: '', redirectTo: 'consultation', pathMatch: 'full' },
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule' }
 ];
 
 @NgModule({
