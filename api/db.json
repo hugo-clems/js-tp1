@@ -20,5 +20,17 @@
       "description": "qsd",
       "id": 4
     }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "lastName": "Hugo",
+      "firstName": "Victor"
+    },
+    {
+      "lastName": "Zola",
+      "firstName": "Emile",
+      "id": 2
+    }
   ]
 }
