@@ -20,7 +20,7 @@ export class AuthorComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authorService.create(this.authorForm.value).subscribe();
+    this.authorService.create(this.authorForm.value).subscribe(() => this.authorForm.reset());
   }
 
 }
