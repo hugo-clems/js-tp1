@@ -1,0 +1,7 @@
+<form (ngSubmit)="onSubmit()" >
+  <label for="title">Title</label>
+  <input id="title" placeholder="Title" name="title" [(ngModel)]="model.title" required>
+  <label for="description">Description</label>
+  <input id="description" placeholder="Description" name="description" [(ngModel)]="model.description" required>
+  <button type="submit">Submit</button>
+</form>
