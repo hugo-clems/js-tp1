@@ -4,4 +4,7 @@
   <label for="firstName">First Name</label>
   <input id="firstName" formControlName="firstName">
   <button type="submit">Submit</button>
+  <p *ngIf="lastName.errors?.required">Last Name is required !</p>
+  <p *ngIf="lastName.errors?.minlength">Last Name minLength is 4 !</p>
+  <p *ngIf="firstName.errors?.required">First Name is required !</p>
 </form>

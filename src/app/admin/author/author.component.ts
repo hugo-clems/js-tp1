@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthorService } from 'src/app/shared/author.service';
 
 @Component({
@@ -10,8 +10,13 @@ import { AuthorService } from 'src/app/shared/author.service';
 export class AuthorComponent implements OnInit {
 
   authorForm = new FormGroup({
-    lastName: new FormControl(),
-    firstName: new FormControl()
+    lastName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4)
+    ]),
+    firstName: new FormControl('', [
+      Validators.required
+    ])
   })
 
   constructor(private authorService: AuthorService) { }
@@ -21,6 +26,14 @@ export class AuthorComponent implements OnInit {
 
   onSubmit() {
     this.authorService.create(this.authorForm.value).subscribe(() => this.authorForm.reset());
+  }
+
+  get firstName() {
+    return this.authorForm.get("firstName");
+  }
+
+  get lastName() {
+    return this.authorForm.get("lastName");
   }
 
 }
